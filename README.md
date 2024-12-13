@@ -1,4 +1,4 @@
-# AEDS3
+# Projeto e análise de algoritmos
 ```c
 #define AUTORES ["Guilherme Francis e Ramon Junior"]
 #define DISCIPLINA "Projeto e análise de algoritmos"
@@ -19,7 +19,7 @@ make
 Execute o arquivo final:
 
 ```bash
-./kitboom -k kit_file.txt -c config_file.txt
+./sudoku -f sudoku.txt
 ```
 
 &nbsp;
