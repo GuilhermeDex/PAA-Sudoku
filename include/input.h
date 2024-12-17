@@ -1,6 +1,7 @@
 #ifndef INPUT_H
 #define INPUT_H
 
+#include <stdio.h>
 
 //funcoes para ler e saida dos arquivos
 void le_arquivo(char *nome, int mat[][9][9], int *sudoku_count);

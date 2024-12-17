@@ -3,7 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "input.h"
+#include "../include/input.h"
 
 
 void le_arquivo(char *nome, int mat[][9][9], int *sudoku_count) {
@@ -23,18 +23,18 @@ void le_arquivo(char *nome, int mat[][9][9], int *sudoku_count) {
                 if (fscanf(arq, " %c", &valor) != 1) {
                     if (i == 0 && j == 0 && *sudoku_count == 0) {
                         fclose(arq);
-                        return; // Fim do arquivo
+                        return; // fim do arquivo
                     } else {
                         fclose(arq);
-                        return; // Fim do último Sudoku
+                        return; // fim do ultimo sudoku
                     }
                 }
                 if (valor == 'v') {
-                    mat[*sudoku_count][i][j] = 0; // Substitui 'v' por 0
+                    mat[*sudoku_count][i][j] = 0; // substitui 'v' por 0
                 } else if (valor >= '1' && valor <= '9') {
-                    mat[*sudoku_count][i][j] = valor - '0'; // Converte caractere para número inteiro
+                    mat[*sudoku_count][i][j] = valor - '0'; // converte caractere para numero inteiro
                 } else {
-                    printf("Arquivo de entrada contém valores inválidos no Sudoku %d.\n", *sudoku_count + 1);
+                    printf("Arquivo de entrada contem valores invalidos no Sudoku %d.\n", *sudoku_count + 1);
                     fclose(arq);
                     exit(1);
                 }
@@ -43,13 +43,13 @@ void le_arquivo(char *nome, int mat[][9][9], int *sudoku_count) {
 
         (*sudoku_count)++;
 
-        // Verifica se há mais Sudokus no arquivo (linhas em branco)
+        // verifica se ha mais sudokus no arquivo (linhas em branco)
         int c = fgetc(arq);
         if (c == EOF) {
             fclose(arq);
             return;
         } else if (c != '\n' && c != '\r') {
-            ungetc(c, arq); // Retorna caractere lido ao buffer
+            ungetc(c, arq); // retorna caractere lido ao buffer
         }
     }
 }
@@ -72,7 +72,7 @@ char *processar_entrada(int argc, char *argv[]) {
     }
 
     if (filename == NULL) {
-        fprintf(stderr, "Erro: Nome do arquivo de entrada não especificado.\n");
+        fprintf(stderr, "Erro: Nome do arquivo de entrada nao especificado.\n");
         fprintf(stderr, "Uso: %s -f <arquivo>\n", argv[0]);
         exit(EXIT_FAILURE);
     }

@@ -1,5 +1,5 @@
-#include "input.h"
-#include "logic.h"
+#include "../include/input.h"
+#include "../include/logic.h"
 
 int main(int argc, char *argv[]) {
     

@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "logic.h"
-#include "input.h"
-#include "timer.h"
+#include "../include/logic.h"
+#include "../include/input.h"
+#include "../include/timer.h"
 
 void imprimir_sudoku(int mat[][9], int index) {
     printf("Sudoku %d:\n", index + 1);
@@ -107,11 +107,11 @@ int resolver_forca_bruta(int mat[][9]) {
                         mat[linha][coluna] = 0; // Backtracking
                     }
                 }
-                return 0; // Falha
+                return 0; // falha
             }
         }
     }
-    return 1; // Sudoku resolvido
+    return 1; // sudoku resolvido
 }
 
 
@@ -174,7 +174,7 @@ void menu(char *filename) {
             continue;
         }
 
-        memcpy(working_mat, mat[k], sizeof(working_mat)); // Copia apenas o Sudoku atual
+        memcpy(working_mat, mat[k], sizeof(working_mat)); // copia apenas o sudoku atual
         printf("Resolvendo sudoku %d...\n", k + 1);
 
         start_timer();
